@@ -1,15 +1,15 @@
-import {LOADING_SMURF_START, LOADING_SMURF_SUCCESS} from '../actions/SmurfAction';
+import { LOADING_SMURF_START, LOADING_SMURF_SUCCESS } from '../actions/SmurfAction';
 
 const initialState = {
     smurf: null,
     isLoading: false,
     error: ""
-}
+};
 
-export const smurfReducer = (state=initialState, action) => {
-    switch (action.type) {
+export const reducer = (state = initialState, action) => {
+    switch(action.type) {
         case LOADING_SMURF_START:
-            return{
+            return {
                 ...state,
                 isLoading: true,
                 error: ""
@@ -17,10 +17,10 @@ export const smurfReducer = (state=initialState, action) => {
         case LOADING_SMURF_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
+                isLoading: true,
                 error: ""
             };
-        default:
-            return state;
+            default:
+                return state;
     }
-}
+};
