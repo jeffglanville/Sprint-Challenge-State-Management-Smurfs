@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {getSmurf} from '../actions/SmurfAction';
 
-const Quotes = ({ getSmurf, smurf, isLoading, error }) => {
+const newSmurf = ({ getSmurf, success, isLoading, error }) => {
     if (isLoading) {
         return<h2>Fetching your smurf at the moment :P</h2>;
     }
@@ -13,9 +13,11 @@ const Quotes = ({ getSmurf, smurf, isLoading, error }) => {
 
     return(
         <div>
-            <h2>Smurf: {smurf}</h2>
+            <h2>Your Smurf: </h2>
             <button onClick={getSmurf}>Click for a Different Smurf</button>
         </div>
+        <div>Add a new Smurf</div>
+        <input type="text" value={newer}
     );
 };
 
@@ -27,4 +29,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {getSmurf})(Smurfs);
+export default connect(mapStateToProps, {getSmurf})(newSmurf);

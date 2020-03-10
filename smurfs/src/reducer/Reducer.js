@@ -17,7 +17,7 @@ export const reducer = (state = initialState, action) => {
         case LOADING_SMURF_SUCCESS:
             return {
                 ...state,
-                isLoading: true,
+                isLoading: false,
                 error: ""
             };
             default:
