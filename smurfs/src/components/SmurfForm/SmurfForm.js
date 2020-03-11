@@ -1,20 +1,12 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './SmurfForm';
 
-const CreateSmurf = (props) => {
+const CreateSmurf = (e) => {
     const [smurfs, setSmurfs] = useState({ name: "", age: 0, height: 0 });
 
-    const addNewSmurf = e => {
-        e.preventDefault();
-
-        axios
-            .post("http://localhost:3333/smurfs", smurfs)
-            .then(res => props.history.push('/'))
-            .catch(err => console.log(err));
-    }
 
     const handleChanges = e => {
+        e.preventDefault();
         setSmurfs({
             ...smurfs,
             [e.target.name]: e.target.value,
@@ -23,7 +15,7 @@ const CreateSmurf = (props) => {
 
     return (
         <div>
-            <form className="form-wrapper" onSubmit={addNewSmurf}>
+            <form className="form-wrapper">
                 <label>Smurf Name: </label>
                 <input
                     className='form-input'
