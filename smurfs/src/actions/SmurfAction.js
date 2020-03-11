@@ -17,11 +17,7 @@ axios.get('http://localhost:3333/smurfs')
     dispatch({ type: LOADING_SMURF_SUCCESS, payload: res.data});
 })
 .catch(err => {
-    console.log(err);
 
-    dispatch({
-        type: LOADING_SMURF_FAILURE,
-        payload: `${err.response.message} with the response code ${err.response.code}`
-    });
+    dispatch({ type: LOADING_SMURF_FAILURE, payload: err });
 });
 }
