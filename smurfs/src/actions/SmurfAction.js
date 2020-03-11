@@ -6,6 +6,7 @@ export const LOADING_SMURF_SUCCESS = "LOADING_SMURF_SUCCESS";
 export const LOADING_SMURF_FAILURE = "LOADING_SMURF_FAILURE";
 
 export const getSmurf = () => dispatch => {
+
     dispatch({ type: LOADING_SMURF_START });
 
 

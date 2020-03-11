@@ -13,11 +13,8 @@ const newSmurf = ({ getSmurf, success, isLoading, error }) => {
 
     return(
         <div>
-            <h2>Your Smurf: </h2>
             <button onClick={getSmurf}>Click for a Different Smurf</button>
         </div>
-        <div>Add a new Smurf</div>
-        <input type="text" value={newer}
     );
 };
 
