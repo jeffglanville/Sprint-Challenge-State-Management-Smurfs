@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SmurfForm';
 
-const CreateSmurf = (e) => {
+const CreateSmurf = () => {
     const [smurfs, setSmurfs] = useState({ name: "", age: 0, height: 0 });
 
 
@@ -16,7 +16,7 @@ const CreateSmurf = (e) => {
     return (
         <div>
             <form className="form-wrapper">
-                <label>Smurf Name: </label>
+                <label>Smurf Name: CM</label>
                 <input
                     className='form-input'
                     type="text"
@@ -24,7 +24,7 @@ const CreateSmurf = (e) => {
                     value={smurfs.name}
                     onChange={handleChanges}
                 />
-                <label>Smurf Age: </label>
+                <label>Smurf Age: years old</label>
                 <input
                     className='form-input'
                     type="number"
@@ -32,7 +32,7 @@ const CreateSmurf = (e) => {
                     value={smurfs.age}
                     onChange={handleChanges}
                 />
-                <label>Smurf Height: </label>
+                <label>Smurf Height: MM</label>
                 <input
                     className='form-input'
                     type="number"
