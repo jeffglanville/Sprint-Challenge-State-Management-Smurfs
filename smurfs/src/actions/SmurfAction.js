@@ -16,5 +16,4 @@ export const getSmurf = () => dispatch => {
     .catch((err) => {
       dispatch({ type: LOADING_SMURF_FAILURE, payload: err });
     });
-    return null;
 }
