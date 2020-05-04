@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import './SmurfForm';
 
 const CreateSmurf = () => {
@@ -13,9 +14,19 @@ const CreateSmurf = () => {
         })
     }
 
+    const addNewSmurf = e => {
+        const newestSmurf = smurfs
+        addNewSmurf(newestSmurf)
+        setSmurfs({
+            name: "",
+            age: "",
+            height: ""
+        })
+    }
+
     return (
         <div>
-            <form className="form-wrapper">
+            <form className="form-wrapper" onSubmit={addNewSmurf}>
                 <label>Smurf Name: </label>
                 <input
                     className='form-input'
@@ -47,4 +58,9 @@ const CreateSmurf = () => {
     )
 }
 
-export default CreateSmurf;
+const mapStateToProps = state => {
+    return {
+        smurfs: state.smurfs
+    }
+}
+export default connect(mapStateToProps, {addNewSmurf})(CreateSmurf)

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getSmurf } from '../actions/SmurfAction';
 
-const NewSmurf = ({ getSmurf, smurf }) => {
+const NewSmurfs = ({ getSmurf, smurf }) => {
 
     return(
         <div>
@@ -29,6 +29,6 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {getSmurf})(NewSmurf);
+export default connect(mapStateToProps, {getSmurf})(NewSmurfs);
 
 

@@ -17,13 +17,18 @@ export const getSmurf = () => dispatch => {
     .catch((err) => {
       dispatch({ type: LOADING_SMURF_FAILURE, payload: err });
     });
+}
 
-    dispatch({ type: CREATE_SMURF })
+export const NewSmurf = () => dispatch => {
+  dispatch({ type: CREATE_SMURF })
 
-    axios
-      .post("http://localhost:3333/smurfs")
-      .then(res => {
-        console.log(res, "hey there new smurf")
-        dispatch({ type: CREATE_SMURF, payload: res.data });
-      })
+axios
+  .post("http://localhost:3333/smurfs", NewSmurf)
+  .then(res => {
+    console.log(res, "hey there new smurf")
+    dispatch({ type: CREATE_SMURF, payload: res.data });
+  })
+  .catch(err => {
+    dispatch({ type: LOADING_SMURF_FAILURE, payload: err.response });
+  })
 }
