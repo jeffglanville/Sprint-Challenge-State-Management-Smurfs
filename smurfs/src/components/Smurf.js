@@ -2,21 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getSmurf } from '../actions/SmurfAction';
 
-const newSmurf = ({ getSmurf, smurfs }) => {
+const NewSmurf = ({ getSmurf, smurf }) => {
 
     return(
         <div>
             <h1>Smurf Family:</h1>
-            {smurfs.map((smurf) => {
+            {smurf.map((smurf) => {
                 return (
                     <ul>
-                        <p>Name: {smurf.name} CM</p>
+                        <p>Name: {smurf.name} </p>
                         <p>Age: {smurf.age} CM</p>
                         <p>Height: {smurf.height} CM</p>
                     </ul>
                 )
             })}
-            <button onClick={getSmurf}>Click for a Different Smurf</button>
+            <button onClick={getSmurf}>Click for a Smurf</button>
         </div>
     );
 };
@@ -29,6 +29,6 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {getSmurf})(newSmurf);
+export default connect(mapStateToProps, {getSmurf})(NewSmurf);
 
 

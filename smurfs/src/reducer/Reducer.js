@@ -1,4 +1,4 @@
-import { LOADING_SMURF_START, LOADING_SMURF_SUCCESS, LOADING_SMURF_FAILURE } from '../actions/SmurfAction';
+import { LOADING_SMURF_START, LOADING_SMURF_SUCCESS, LOADING_SMURF_FAILURE, CREATE_SMURF } from '../actions/SmurfAction';
 
 const initialState = {
     smurf: [],
@@ -26,6 +26,12 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 error: action.payload
+            }
+        case CREATE_SMURF:
+            return {
+                ...state,
+                isLoading: false,
+                error: ""
             }
             default:
                 return state;

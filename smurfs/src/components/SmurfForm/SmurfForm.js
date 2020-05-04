@@ -16,11 +16,12 @@ const CreateSmurf = () => {
     return (
         <div>
             <form className="form-wrapper">
-                <label>Smurf Name: CM</label>
+                <label>Smurf Name: </label>
                 <input
                     className='form-input'
                     type="text"
                     name="name"
+                    placeholder="Smurf Name"
                     value={smurfs.name}
                     onChange={handleChanges}
                 />
@@ -40,7 +41,7 @@ const CreateSmurf = () => {
                     value={smurfs.height}
                     onChange={handleChanges}
                 />
-                <button>Create the new smurf!</button>
+                <button>Add the new smurf!</button>
             </form>
         </div>
     )
