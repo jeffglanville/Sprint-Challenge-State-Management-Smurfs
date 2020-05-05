@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { NewSmurf } from '../../actions/SmurfAction';
+import { addSmurf } from '../../actions/SmurfAction';
 import './SmurfForm';
 
 const SmurfForm = props => {
@@ -40,16 +40,18 @@ const SmurfForm = props => {
                 <label>Smurf Age: years old</label>
                 <input
                     className='form-input'
-                    type="number"
+                    type="text"
+                    placeholder="age in years"
                     name="age"
                     value={smurfState.age}
                     onChange={handleChanges}
                 />
-                <label>Smurf Height: MM</label>
+                <label>Smurf Height: </label>
                 <input
                     className='form-input'
-                    type="number"
+                    type="text"
                     name="height"
+                    placeholder="height in MM"
                     value={smurfState.height}
                     onChange={handleChanges}
                 />
@@ -66,4 +68,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {NewSmurf}) (SmurfForm)
+export default connect(mapStateToProps, {addSmurf}) (SmurfForm)

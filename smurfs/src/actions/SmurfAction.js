@@ -3,7 +3,7 @@ import axios from "axios";
 export const LOADING_SMURF_START = "LOADING_SMURF_START";
 export const LOADING_SMURF_SUCCESS = "LOADING_SMURF_SUCCESS";
 export const LOADING_SMURF_FAILURE = "LOADING_SMURF_FAILURE";
-export const CREATE_SMURF = "CREATE_SMURF";
+export const CREATE_SMURF = "CREATE_SMURF"
 
 export const GetSmurf = () => dispatch => {
   dispatch({ type: LOADING_SMURF_START });
@@ -19,11 +19,11 @@ export const GetSmurf = () => dispatch => {
     });
 }
 
-export const NewSmurf = () => dispatch => {
+export const addSmurf = (newSmurfy) => dispatch => {
   dispatch({ type: CREATE_SMURF })
 
 axios
-  .post("http://localhost:3333/smurfs", NewSmurf)
+  .post("http://localhost:3333/smurfs", newSmurfy)
   .then(res => {
     console.log(res, "hey there new smurf")
     dispatch({ type: CREATE_SMURF, payload: res.data });

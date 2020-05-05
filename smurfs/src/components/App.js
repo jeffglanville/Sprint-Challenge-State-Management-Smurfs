@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
 import SmurfForm from '../components/SmurfForm/SmurfForm';
-import { GetSmurf } from '../actions/SmurfAction';
+import NewSmurfs from '../components/Smurf';
 
 import "../components/SmurfForm/SmurfForm.css";
+
 
 
 
@@ -12,8 +13,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Smurfs!</h1>
-        <GetSmurf />
         <SmurfForm />
+        <NewSmurfs />
       </div>
     )
   }

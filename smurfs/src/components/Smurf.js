@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { GetSmurf } from '../actions/SmurfAction';
+import './Smurfs.css';
 
 const NewSmurfs = ({ GetSmurf, smurf }) => {
     return(
-        <div>
+        <div className="smurf-wrapper">
             <h1>Smurf Family:</h1>
             {smurf.map((smurf) => {
                 return (
-                    <ul>
+                    <ul className="smurf">
                         <p>Name: {smurf.name} </p>
                         <p>Age: {smurf.age} CM</p>
                         <p>Height: {smurf.height} CM</p>

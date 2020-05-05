@@ -1,0 +1,15 @@
+.smurf-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.smurf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 4px black;
+    width: 10%;
+}
