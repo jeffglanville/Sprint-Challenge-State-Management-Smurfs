@@ -1,30 +1,40 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { NewSmurf } from '../../actions/SmurfAction';
 import './SmurfForm';
 
-const CreateSmurf = () => {
-    const [smurfs, setSmurfs] = useState({ name: "", age: "", height: "" });
+const SmurfForm = props => {
+    const [smurfState, setSmurfState] = useState({ name: "", age: "", height: "" });
 
 
     const handleChanges = e => {
-        e.preventDefault();
-        setSmurfs({
-            ...smurfs,
-            [e.target.name]: e.target.value,
-        })
+        setSmurfState({
+            ...smurfState,
+            [e.target.name]: e.target.value
+        });
+    };
 
-        console.log(smurfs)
+    const addNew = e => {
+        e.preventDefault();
+        const newSmurfie = smurfState
+        props.addSmurf(newSmurfie)
+        setSmurfState({
+            name: "",
+            age: "",
+            height: ""
+        })
     }
 
     return (
         <div>
-            <form className="form-wrapper">
+            <form className="form-wrapper" onSubmit={addNew}>
                 <label>Smurf Name: </label>
                 <input
                     className='form-input'
                     type="text"
                     name="name"
                     placeholder="Smurf Name"
-                    value={smurfs.name}
+                    value={smurfState.name}
                     onChange={handleChanges}
                 />
                 <label>Smurf Age: years old</label>
@@ -32,7 +42,7 @@ const CreateSmurf = () => {
                     className='form-input'
                     type="number"
                     name="age"
-                    value={smurfs.age}
+                    value={smurfState.age}
                     onChange={handleChanges}
                 />
                 <label>Smurf Height: MM</label>
@@ -40,13 +50,20 @@ const CreateSmurf = () => {
                     className='form-input'
                     type="number"
                     name="height"
-                    value={smurfs.height}
+                    value={smurfState.height}
                     onChange={handleChanges}
                 />
                 <button>Add the new smurf!</button>
             </form>
         </div>
-    )
+    );
 }
 
-export default CreateSmurf;
+const mapStateToProps = state => {
+    return {
+        smurfs: state.smurfs
+    }
+}
+
+
+export default connect(mapStateToProps, {NewSmurf}) (SmurfForm)

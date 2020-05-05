@@ -5,7 +5,7 @@ export const LOADING_SMURF_SUCCESS = "LOADING_SMURF_SUCCESS";
 export const LOADING_SMURF_FAILURE = "LOADING_SMURF_FAILURE";
 export const CREATE_SMURF = "CREATE_SMURF";
 
-export const getSmurf = () => dispatch => {
+export const GetSmurf = () => dispatch => {
   dispatch({ type: LOADING_SMURF_START });
 
   axios

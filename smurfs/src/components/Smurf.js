@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getSmurf } from '../actions/SmurfAction';
+import { GetSmurf } from '../actions/SmurfAction';
 
-const NewSmurfs = ({ getSmurf, smurf }) => {
+const NewSmurfs = ({ GetSmurf, smurf }) => {
     return(
         <div>
             <h1>Smurf Family:</h1>
@@ -15,7 +15,7 @@ const NewSmurfs = ({ getSmurf, smurf }) => {
                     </ul>
                 )
             })}
-            <button onClick={getSmurf}>Click for a Smurf</button>
+            <button onClick={GetSmurf}>Click for a Smurf</button>
         </div>
     );
 };
@@ -28,6 +28,6 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, {getSmurf})(NewSmurfs);
+export default connect(mapStateToProps, {GetSmurf})(NewSmurfs);
 
 

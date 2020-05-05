@@ -1,7 +1,10 @@
 import React from "react";
 import "./App.css";
+import SmurfForm from '../components/SmurfForm/SmurfForm';
+import { GetSmurf } from '../actions/SmurfAction';
+
 import "../components/SmurfForm/SmurfForm.css";
-import CreateSmurf from './SmurfForm/SmurfForm';
+
 
 
 class App extends React.Component {
@@ -9,7 +12,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Smurfs!</h1>
-        <CreateSmurf />
+        <GetSmurf />
+        <SmurfForm />
       </div>
     )
   }
