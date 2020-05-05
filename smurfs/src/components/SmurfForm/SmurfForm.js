@@ -37,7 +37,7 @@ const SmurfForm = props => {
                     value={smurfState.name}
                     onChange={handleChanges}
                 />
-                <label>Smurf Age: years old</label>
+                <label>Smurf Age: </label>
                 <input
                     className='form-input'
                     type="text"

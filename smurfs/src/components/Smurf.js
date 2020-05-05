@@ -16,7 +16,7 @@ const NewSmurfs = ({ GetSmurf, smurf }) => {
                     </ul>
                 )
             })}
-            <button onClick={GetSmurf}>Click for a Smurf</button>
+            <button onClick={GetSmurf}>Click for Smurf Family</button>
         </div>
     );
 };
