@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import "../components/SmurfForm/SmurfForm.css";
 import CreateSmurf from './SmurfForm/SmurfForm';
-import NewSmurfs from '../components/Smurf';
 
 
 class App extends React.Component {
@@ -11,7 +10,6 @@ class App extends React.Component {
       <div className="App">
         <h1>Smurfs!</h1>
         <CreateSmurf />
-        <NewSmurfs />
       </div>
     )
   }

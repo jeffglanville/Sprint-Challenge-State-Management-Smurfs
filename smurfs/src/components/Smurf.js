@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getSmurf } from '../actions/SmurfAction';
 
 const NewSmurfs = ({ getSmurf, smurf }) => {
-
     return(
         <div>
             <h1>Smurf Family:</h1>
