@@ -1,7 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { GetSmurf } from '../actions/SmurfAction';
+import { GetSmurf, deleteSmurf } from '../actions/SmurfAction';
 import './Smurfs.css';
+
+const deleteHandle = (id) => {
+    deleteSmurf(id);
+}
 
 const NewSmurfs = ({ GetSmurf, smurf }) => {
     return(
@@ -17,6 +21,7 @@ const NewSmurfs = ({ GetSmurf, smurf }) => {
                 )
             })}
             <button onClick={GetSmurf}>Click for Smurf Family</button>
+            <button onClick={deleteHandle}>Delete the Smurf</button>
         </div>
     );
 };
